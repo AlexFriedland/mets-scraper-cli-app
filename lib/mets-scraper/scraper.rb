@@ -1,3 +1,5 @@
+require 'pry'
+
 class Scraper
 
   def self.get_page
