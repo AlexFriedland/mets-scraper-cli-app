@@ -7,6 +7,7 @@ class Scraper
   end
 
   def self.get_players_by_position
+    positions = self.get_page.css("section.module")
   end
 
 
