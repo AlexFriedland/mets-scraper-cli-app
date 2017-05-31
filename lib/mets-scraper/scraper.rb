@@ -6,12 +6,12 @@ class Scraper
     Nokogiri::HTML(open("http://m.mets.mlb.com/roster/"))
   end
 
-  def self.master
-    positions = self.get_page.css("section.module")
+  def self.master_list
+    self.get_page.css("section.module")
   end
 
   def self.position_list
-    self.master.each {|position|
+    self.master_list.each {|position|
       #add
     }
   end
