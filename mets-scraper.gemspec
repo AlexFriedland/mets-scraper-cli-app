@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple sports gem"
   s.authors     = ["Alexander Friedland"]
   s.email       = 'friedlandaj@gmail.com'
-  s.files       = ["lib/mets-scraper.rb"]
+  s.files       = ["lib/mets-scraper.rb", "lib/mets-scraper/cli.rb", "lib/mets-scraper/player.rb", "lib/mets-scraper/position.rb", "lib/mets-scraper/scraper.rb"]
   s.homepage    =
     'http://rubygems.org/gems/hola' #FIX THIS
   s.license       = 'Flatiron School'

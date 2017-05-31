@@ -10,8 +10,10 @@ class Scraper
     positions = self.get_page.css("section.module")
   end
 
-  def self.create_list
-    self.master.each {|position|}
+  def self.position_list
+    self.master.each {|position|
+      #add
+    }
   end
 
 end
