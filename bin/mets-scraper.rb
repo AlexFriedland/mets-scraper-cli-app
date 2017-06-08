@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
 
-puts "Hello World!"
+MetsScraper::CLI.new.call #put the code we wish we had
