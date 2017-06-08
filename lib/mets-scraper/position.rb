@@ -1,2 +1,0 @@
-class MetsScraper::position
-end
