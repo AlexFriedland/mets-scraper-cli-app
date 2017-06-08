@@ -1,0 +1,2 @@
+class MetsScraper::Player
+end
