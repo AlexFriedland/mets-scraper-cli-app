@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require './lib/mets-scraper.rb'
+require './lib/mets-scraper'
 
 MetsScraper::CLI.new.call #put the code we wish we had

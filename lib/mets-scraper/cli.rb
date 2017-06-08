@@ -1,4 +1,5 @@
-#CLI controller
+#CLI controller - user interaction. welcome, input etc.
+
 class MetsScraper::CLI
 
   #stub of our interface
