@@ -15,7 +15,3 @@ require_relative "./mets-scraper/player"
 require_relative "./mets-scraper/position"
 require_relative "./mets-scraper/scraper"
 require_relative "./mets-scraper/version"
-
-module MetsScraper
-
-end
