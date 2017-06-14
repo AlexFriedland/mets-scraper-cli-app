@@ -6,6 +6,8 @@ class MetsScraper::CLI
 
   def call
     player_roster
+    #MetsScraper.get_page
+    #MetsScraper.make_list
     menu
   end
 
@@ -84,9 +86,31 @@ NO.	NAME	           POS	BAT	THW	AGE	HT	WT	BIRTH PLACE	SALARY
   def menu
     puts "Press 1 to view the roster by players, press 2 to view by position:"
 
-    input = nil
+    input = gets.strip
 
-    
+    if input == "1"
+      puts "ROSTER BY PLAYER"
+    elsif input == "2"
+      puts "ROSTER BY POSITION"
+    else
+      menu
+    end
+=begin
+    while input != exit
+      puts "Press 1 to view the roster by players, press 2 to view by position:"
+
+      case input
+      when "1"
+        puts "ROSTER BY PLAYER"
+      when "2"
+        puts "LIST BY POSITION"
+      when "exit"
+        puts "I reckon you'll be back before long."
+      end
+    end
+=end
   end
+
+
 
 end
