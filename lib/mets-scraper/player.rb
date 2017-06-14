@@ -12,4 +12,8 @@ class MetsScraper::Player
     @weight = weight
     @dob = dob
   end
+
+  def self.all
+    @@all
+  end
 end
