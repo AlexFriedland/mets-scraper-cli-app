@@ -84,14 +84,16 @@ NO.	NAME	           POS	BAT	THW	AGE	HT	WT	BIRTH PLACE	SALARY
   end
 
   def menu
-    puts "Press 1 to view the roster by players, press 2 to view by position:"
+    puts "Press 1 to view the roster by players, press 2 to view by position. Type 'exit' to quit:"
 
     input = gets.strip
 
     if input == "1"
       puts "ROSTER BY PLAYER"
+      player_roster #by player
     elsif input == "2"
       puts "ROSTER BY POSITION"
+      player_roster #by position      
     else
       menu
     end
