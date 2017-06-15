@@ -91,26 +91,17 @@ NO.	NAME	           POS	BAT	THW	AGE	HT	WT	BIRTH PLACE	SALARY
     if input == "1"
       puts "ROSTER BY PLAYER"
       player_roster #by player
+      menu
     elsif input == "2"
       puts "ROSTER BY POSITION"
-      player_roster #by position      
+      player_roster #by position
+      menu
+    elsif input == "exit"
+      abort("See you soon!")
     else
+      puts "Sorry I don't recognize that input."
       menu
     end
-=begin
-    while input != exit
-      puts "Press 1 to view the roster by players, press 2 to view by position:"
-
-      case input
-      when "1"
-        puts "ROSTER BY PLAYER"
-      when "2"
-        puts "LIST BY POSITION"
-      when "exit"
-        puts "I reckon you'll be back before long."
-      end
-    end
-=end
   end
 
 
