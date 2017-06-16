@@ -29,24 +29,26 @@ class MetsScraper::CLI
 
     input = gets.strip
 
+
     if input == "1"
       puts "PITCHERS"
-      player_roster #by player
-      menu
+      list_pitchers
     elsif input == "2"
       puts "CATCHERS"
-      player_roster #by position
-      menu
+      list_catchers
     elsif input == "3"
       puts "INFIELD:"
+      list_infield
     elsif input == "4"
       puts "OUTFIELD:"
+      list_outfield
     elsif input == "5"
       puts "FULL ROSTER"
+      full_roster
     elsif input == "exit"
       abort("See you soon!")
     else
-      puts "Sorry I don't recognize that input."
+      puts "Sorry, I don't recognize that input."
       menu
     end
   end
