@@ -1,4 +1,5 @@
 #CLI controller - user interaction. welcome, input etc.
+require 'pry'
 
 class MetsScraper::CLI
 
@@ -6,8 +7,6 @@ class MetsScraper::CLI
 
   def call
     menu
-    #MetsScraper.get_page
-    #MetsScraper.make_list
   end
 
   def player_roster
@@ -31,7 +30,7 @@ class MetsScraper::CLI
 
 
     if input == "1"
-      puts "PITCHERS"
+      puts "PITCHERS:"
       list_pitchers
     elsif input == "2"
       puts "CATCHERS"
@@ -52,6 +51,41 @@ class MetsScraper::CLI
       menu
     end
   end
+
+  def list_pitchers
+    puts "
+    PITCHERS:
+    "
+
+    puts "To see more information for a player, enter their number:"
+
+    number = gets.strip
+  end
+
+  def list_catchers
+
+    puts "To see more information for a player, enter their number:"
+
+    number = gets.strip
+  end
+
+  def list_outfield
+
+    puts "To see more information for a player, enter their number:"
+
+    number = gets.strip
+  end
+
+  def list_infield
+
+    puts "To see more information for a player, enter their number:"
+
+    number = gets.strip
+  end
+
+
+
+
 end
 
 

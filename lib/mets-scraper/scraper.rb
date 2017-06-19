@@ -3,7 +3,8 @@ require 'pry'
 class MetsScraper::Scraper
 
   def self.get_page
-    Nokogiri::HTML(open("http://m.mets.mlb.com/roster/"))
+    page = Nokogiri::HTML(open("http://m.mets.mlb.com/roster/"))
+    binding.pry
   end
 
   def self.master_list
