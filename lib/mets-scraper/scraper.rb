@@ -7,7 +7,11 @@ class MetsScraper::Scraper
   end
 
   def self.pitchers
-    self.get_page.css("section.module h4").text
+    get_page.css("section.module h4").each {|h4|
+      if h4.text == "Pitchers"
+        #instantiate player and puts their information
+      end
+    }
   end
 
   def catchers
