@@ -53,6 +53,7 @@ class MetsScraper::CLI
   end
 
   def list_pitchers
+    MetsScraper::Scraper.get_page
     puts "
     PITCHERS:
     "
