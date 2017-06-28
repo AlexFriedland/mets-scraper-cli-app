@@ -30,8 +30,7 @@ class MetsScraper::CLI
 
 
     if input == "1"
-      puts "PITCHERS:"
-      puts MetsScraper::Scraper.list_pitchers
+      MetsScraper::Scraper.pitchers
 
     elsif input == "2"
       puts "CATCHERS"
