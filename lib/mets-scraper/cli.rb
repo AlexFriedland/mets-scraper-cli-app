@@ -31,6 +31,7 @@ class MetsScraper::CLI
 
     if input == "1"
       MetsScraper::Scraper.pitchers
+      MetsScraper::Player.all
 
     elsif input == "2"
       puts "CATCHERS"
@@ -53,8 +54,8 @@ class MetsScraper::CLI
   end
 
   def list_pitchers
-    MetsScraper::Scraper.get_page
-
+    MetsScraper::Scraper.get_players
+    binding.pry
     puts "
     PITCHERS:
     "

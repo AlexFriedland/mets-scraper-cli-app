@@ -11,6 +11,7 @@ class MetsScraper::Player
     @height = height
     @weight = weight
     @dob = dob
+    @@all << self
   end
 
   def self.all
