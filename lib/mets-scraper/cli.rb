@@ -31,7 +31,7 @@ class MetsScraper::CLI
 
     if input == "1"
       MetsScraper::Scraper.pitchers
-      MetsScraper::Player.all
+
 
     elsif input == "2"
       puts "CATCHERS"

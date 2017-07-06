@@ -25,7 +25,16 @@ class MetsScraper::Scraper
           dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
 
-          puts MetsScraper::Player.number
+          
+          puts "
+
+          Name: #{name}
+          Number: #{number}
+          Batting / Throwing: #{bt}
+          Height: #{height}
+          Weight: #{weight}
+          Birthday: #{dob}"
+
 
         }
       end
@@ -34,27 +43,6 @@ class MetsScraper::Scraper
   end
 
 
-
-=begin
-  def self.pitchers
-    self.get_page.css("section.module").each {|h4|
-
-      if self.get_page.css("section.module h4").text == "Pitchers"
-
-        self.get_page.css("section.module tr").each { |player|
-
-          name = player.css("td.dg-name_display_first_last a").text
-          number = player.css("tr tg.dg-jersey_number").text
-          bt = player.css("tr td.dg-bats_throws").text
-          height = player.css("tr td.dg-height").text
-          weight = player.css("tr td.dg-weight").text
-          dob = player.css("tr td.dg-date_of_birth").text
-          MetsScraper::Player.new(name, number, bt, height, weight, dob)
-        }
-      end
-    }
-  end
-=end
 
 
   def catchers
@@ -65,18 +53,11 @@ class MetsScraper::Scraper
         players.each {|player|
           name = player.css("td.dg-name_display_first_last a").text
           number = player.css("td.dg-jersey_number").text
-          bt = player.css("tr td.dg-bats_throws").text
-          height = player.css("tr td.dg-height").text
-          weight = player.css("tr td.dg-weight").text
-          dob = player.css("tr td.dg-date_of_birth").text
+          bt = player.css("td.dg-bats_throws").text
+          height = player.css("td.dg-height").text
+          weight = player.css("td.dg-weight").text
+          dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
-
-          puts name
-
-          puts MetsScraper::Player.name
-          puts number
-
-          puts "----"
         }
       end
     }
@@ -91,18 +72,11 @@ class MetsScraper::Scraper
         players.each {|player|
           name = player.css("td.dg-name_display_first_last a").text
           number = player.css("td.dg-jersey_number").text
-          bt = player.css("tr td.dg-bats_throws").text
-          height = player.css("tr td.dg-height").text
-          weight = player.css("tr td.dg-weight").text
-          dob = player.css("tr td.dg-date_of_birth").text
+          bt = player.css("td.dg-bats_throws").text
+          height = player.css("td.dg-height").text
+          weight = player.css("td.dg-weight").text
+          dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
-
-          puts name
-
-          puts MetsScraper::Player.name
-          puts number
-
-          puts "----"
         }
       end
     }
@@ -117,18 +91,11 @@ class MetsScraper::Scraper
         players.each {|player|
           name = player.css("td.dg-name_display_first_last a").text
           number = player.css("td.dg-jersey_number").text
-          bt = player.css("tr td.dg-bats_throws").text
-          height = player.css("tr td.dg-height").text
-          weight = player.css("tr td.dg-weight").text
-          dob = player.css("tr td.dg-date_of_birth").text
+          bt = player.css("td.dg-bats_throws").text
+          height = player.css("td.dg-height").text
+          weight = player.css("td.dg-weight").text
+          dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
-
-          puts name
-
-          puts MetsScraper::Player.name
-          puts number
-
-          puts "----"
         }
       end
     }
