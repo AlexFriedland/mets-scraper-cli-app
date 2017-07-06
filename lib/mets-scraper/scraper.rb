@@ -24,9 +24,14 @@ class MetsScraper::Scraper
           weight = player.css("tr td.dg-weight").text
           dob = player.css("tr td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
-          binding.pry
+
+          puts name
+
+          puts MetsScraper::Player.name
+          puts number
+
+          puts "----"
         }
-        MetsScraper::Player.all
       end
     }
 
@@ -57,12 +62,81 @@ class MetsScraper::Scraper
 
 
   def catchers
+    self.get_players.each {|section|
+      if section.css("h4").text == "Catchers"
+        players = section.css("tr")
+
+        players.each {|player|
+          name = player.css("td.dg-name_display_first_last a").text
+          number = player.css("tbody tg.dg-jersey_number").text
+          bt = player.css("tr td.dg-bats_throws").text
+          height = player.css("tr td.dg-height").text
+          weight = player.css("tr td.dg-weight").text
+          dob = player.css("tr td.dg-date_of_birth").text
+          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+
+          puts name
+
+          puts MetsScraper::Player.name
+          puts number
+
+          puts "----"
+        }
+      end
+    }
+
   end
 
   def infield
+    self.get_players.each {|section|
+      if section.css("h4").text == "Infield"
+        players = section.css("tr")
+
+        players.each {|player|
+          name = player.css("td.dg-name_display_first_last a").text
+          number = player.css("tbody tg.dg-jersey_number").text
+          bt = player.css("tr td.dg-bats_throws").text
+          height = player.css("tr td.dg-height").text
+          weight = player.css("tr td.dg-weight").text
+          dob = player.css("tr td.dg-date_of_birth").text
+          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+
+          puts name
+
+          puts MetsScraper::Player.name
+          puts number
+
+          puts "----"
+        }
+      end
+    }
+
   end
 
   def outfield
+    self.get_players.each {|section|
+      if section.css("h4").text == "Outfield"
+        players = section.css("tr")
+
+        players.each {|player|
+          name = player.css("td.dg-name_display_first_last a").text
+          number = player.css("tbody tg.dg-jersey_number").text
+          bt = player.css("tr td.dg-bats_throws").text
+          height = player.css("tr td.dg-height").text
+          weight = player.css("tr td.dg-weight").text
+          dob = player.css("tr td.dg-date_of_birth").text
+          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+
+          puts name
+
+          puts MetsScraper::Player.name
+          puts number
+
+          puts "----"
+        }
+      end
+    }
+
   end
 
   def full_list
