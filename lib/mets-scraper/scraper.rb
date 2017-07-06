@@ -14,11 +14,11 @@ class MetsScraper::Scraper
   def self.pitchers
     self.get_players.each {|section|
       if section.css("h4").text == "Pitchers"
-        pitchers = section.css("section.module tr")
-        puts pitchers
+        players = section.css("tr")
+        puts players.text
       end
-
     }
+
   end
 
 
