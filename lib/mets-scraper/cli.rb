@@ -35,16 +35,16 @@ class MetsScraper::CLI
 
     elsif input == "2"
       puts "CATCHERS"
-      list_catchers
+      MetsScraper::Scraper.catchers
     elsif input == "3"
       puts "INFIELD:"
-      list_infield
+      MetsScraper::Scraper.infield
     elsif input == "4"
       puts "OUTFIELD:"
-      list_outfield
+      MetsScraper::Scraper.outfield
     elsif input == "5"
       puts "FULL ROSTER"
-      full_roster
+      MetsScraper::Scraper.full_roster
     elsif input == "exit"
       abort("See you soon!")
     else

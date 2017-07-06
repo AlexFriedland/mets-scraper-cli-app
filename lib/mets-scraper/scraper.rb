@@ -25,7 +25,7 @@ class MetsScraper::Scraper
           dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
 
-          
+
           puts "
 
           Name: #{name}
@@ -45,7 +45,7 @@ class MetsScraper::Scraper
 
 
 
-  def catchers
+  def self.catchers
     self.get_players.each {|section|
       if section.css("h4").text == "Catchers"
         players = section.css("tr")
@@ -58,13 +58,22 @@ class MetsScraper::Scraper
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
+
+          puts "
+
+          Name: #{name}
+          Number: #{number}
+          Batting / Throwing: #{bt}
+          Height: #{height}
+          Weight: #{weight}
+          Birthday: #{dob}"
         }
       end
     }
 
   end
 
-  def infield
+  def self.infield
     self.get_players.each {|section|
       if section.css("h4").text == "Infield"
         players = section.css("tr")
@@ -77,13 +86,22 @@ class MetsScraper::Scraper
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
+
+          puts "
+
+          Name: #{name}
+          Number: #{number}
+          Batting / Throwing: #{bt}
+          Height: #{height}
+          Weight: #{weight}
+          Birthday: #{dob}"
         }
       end
     }
 
   end
 
-  def outfield
+  def self.outfield
     self.get_players.each {|section|
       if section.css("h4").text == "Outfield"
         players = section.css("tr")
@@ -96,13 +114,26 @@ class MetsScraper::Scraper
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
+
+          puts "
+
+          Name: #{name}
+          Number: #{number}
+          Batting / Throwing: #{bt}
+          Height: #{height}
+          Weight: #{weight}
+          Birthday: #{dob}"
         }
       end
     }
 
   end
 
-  def full_list
+  def self.full_roster
+    pitchers
+    catchers
+    infield
+    outfield
   end
 
 end
