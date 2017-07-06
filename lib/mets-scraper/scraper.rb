@@ -18,19 +18,15 @@ class MetsScraper::Scraper
 
         players.each {|player|
           name = player.css("td.dg-name_display_first_last a").text
-          number = player.css("tbody tg.dg-jersey_number").text
-          bt = player.css("tr td.dg-bats_throws").text
-          height = player.css("tr td.dg-height").text
-          weight = player.css("tr td.dg-weight").text
-          dob = player.css("tr td.dg-date_of_birth").text
+          number = player.css("td.dg-jersey_number").text
+          bt = player.css("td.dg-bats_throws").text
+          height = player.css("td.dg-height").text
+          weight = player.css("td.dg-weight").text
+          dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
 
-          puts name
+          puts MetsScraper::Player.number
 
-          puts MetsScraper::Player.name
-          puts number
-
-          puts "----"
         }
       end
     }
@@ -68,7 +64,7 @@ class MetsScraper::Scraper
 
         players.each {|player|
           name = player.css("td.dg-name_display_first_last a").text
-          number = player.css("tbody tg.dg-jersey_number").text
+          number = player.css("td.dg-jersey_number").text
           bt = player.css("tr td.dg-bats_throws").text
           height = player.css("tr td.dg-height").text
           weight = player.css("tr td.dg-weight").text
@@ -94,7 +90,7 @@ class MetsScraper::Scraper
 
         players.each {|player|
           name = player.css("td.dg-name_display_first_last a").text
-          number = player.css("tbody tg.dg-jersey_number").text
+          number = player.css("td.dg-jersey_number").text
           bt = player.css("tr td.dg-bats_throws").text
           height = player.css("tr td.dg-height").text
           weight = player.css("tr td.dg-weight").text
@@ -120,7 +116,7 @@ class MetsScraper::Scraper
 
         players.each {|player|
           name = player.css("td.dg-name_display_first_last a").text
-          number = player.css("tbody tg.dg-jersey_number").text
+          number = player.css("td.dg-jersey_number").text
           bt = player.css("tr td.dg-bats_throws").text
           height = player.css("tr td.dg-height").text
           weight = player.css("tr td.dg-weight").text
