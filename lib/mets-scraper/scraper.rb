@@ -15,7 +15,17 @@ class MetsScraper::Scraper
     self.get_players.each {|section|
       if section.css("h4").text == "Pitchers"
         players = section.css("tr")
-        puts players.text
+
+        players.each {|player|
+          name = player.css("td.dg-name_display_first_last a").text
+          number = player.css("tr tg.dg-jersey_number").text
+          bt = player.css("tr td.dg-bats_throws").text
+          height = player.css("tr td.dg-height").text
+          weight = player.css("tr td.dg-weight").text
+          dob = player.css("tr td.dg-date_of_birth").text
+          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+          puts Player.name
+        }
       end
     }
 
