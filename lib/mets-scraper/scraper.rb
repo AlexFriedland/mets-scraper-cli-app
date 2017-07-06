@@ -24,18 +24,6 @@ class MetsScraper::Scraper
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
           MetsScraper::Player.new(name, number, bt, height, weight, dob)
-
-
-          puts "
-
-          Name: #{name}
-          Number: #{number}
-          Batting / Throwing: #{bt}
-          Height: #{height}
-          Weight: #{weight}
-          Birthday: #{dob}"
-
-
         }
       end
     }

@@ -32,10 +32,36 @@ class MetsScraper::CLI
     if input == "1"
       MetsScraper::Scraper.pitchers
 
+      MetsScraper::Player.all.each {|player|
+        puts "
+
+        Name: #{player.name}
+        Number: #{player.number}
+        Batting / Throwing: #{player.bt}
+        Height: #{player.height}
+        Weight: #{player.weight}
+        Birthday: #{player.dob}"
+      }
+
 
     elsif input == "2"
-      puts "CATCHERS"
+      puts "CATCHERS:
+
+      "
+
       MetsScraper::Scraper.catchers
+
+      MetsScraper::Player.all.each {|player|
+        puts "
+
+        Name: #{player.name}
+        Number: #{player.number}
+        Batting / Throwing: #{player.bt}
+        Height: #{player.height}
+        Weight: #{player.weight}
+        Birthday: #{player.dob}"
+      }
+
     elsif input == "3"
       puts "INFIELD:"
       MetsScraper::Scraper.infield
