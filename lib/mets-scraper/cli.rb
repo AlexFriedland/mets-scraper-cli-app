@@ -30,6 +30,9 @@ class MetsScraper::CLI
 
 
     if input == "1"
+      puts "PITCHERS OF THE NEW YORK METROPOLITANS
+
+      "
       MetsScraper::Scraper.pitchers
 
       MetsScraper::Player.all.each {|player|
@@ -45,7 +48,7 @@ class MetsScraper::CLI
 
 
     elsif input == "2"
-      puts "CATCHERS:
+      puts "CATCHERS OF THE NEW YORK METROPOLITANS:
 
       "
 
@@ -63,14 +66,57 @@ class MetsScraper::CLI
       }
 
     elsif input == "3"
-      puts "INFIELD:"
+      puts "INFIELD OF THE NEW YORK METROPOLITANS:
+
+      "
       MetsScraper::Scraper.infield
+
+      MetsScraper::Player.all.each {|player|
+        puts "
+
+        Name: #{player.name}
+        Number: #{player.number}
+        Batting / Throwing: #{player.bt}
+        Height: #{player.height}
+        Weight: #{player.weight}
+        Birthday: #{player.dob}"
+      }
+
     elsif input == "4"
-      puts "OUTFIELD:"
+      puts "OUTFIELD OF THE NEW YORK METROPOLITANS:
+
+      "
       MetsScraper::Scraper.outfield
+
+      MetsScraper::Player.all.each {|player|
+        puts "
+
+        Name: #{player.name}
+        Number: #{player.number}
+        Batting / Throwing: #{player.bt}
+        Height: #{player.height}
+        Weight: #{player.weight}
+        Birthday: #{player.dob}"
+      }
+
     elsif input == "5"
-      puts "FULL ROSTER"
+      puts "FULL ROSTER OF THE NEW YORK METROPOLITANS
+
+      "
       MetsScraper::Scraper.full_roster
+
+      MetsScraper::Player.all.each {|player|
+        puts "
+
+        Name: #{player.name}
+        Number: #{player.number}
+        Batting / Throwing: #{player.bt}
+        Height: #{player.height}
+        Weight: #{player.weight}
+        Birthday: #{player.dob}"
+      }
+
+
     elsif input == "exit"
       abort("See you soon!")
     else
