@@ -13,7 +13,11 @@ class MetsScraper::Scraper
 
   def self.pitchers
     self.get_players.each {|section|
-      puts section.css("h4").text
+      if section.css("h4").text == "Pitchers"
+        pitchers = section.css("section.module tr")
+        puts pitchers
+      end
+
     }
   end
 
