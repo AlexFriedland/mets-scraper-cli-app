@@ -9,9 +9,6 @@ class MetsScraper::CLI
     menu
   end
 
-  def player_info
-  end
-
   def menu
     puts "Welcome to the player roster of the New York Metropolitans.
 
@@ -43,8 +40,7 @@ class MetsScraper::CLI
         Batting / Throwing: #{player.bt}
         Height: #{player.height}
         Weight: #{player.weight}
-        Birthday: #{player.dob}
-        "
+        Birthday: #{player.dob}"
 
       }
 
@@ -134,20 +130,19 @@ class MetsScraper::CLI
 
     input = gets.chomp
 
-    if input == quit
+    if input == "quit"
       quit
-      elsif input == back
+    elsif input == "back"
         menu
-      else
-        if input == #player number
-          #drill down
-        else
+    elsif input == x #player number
+      #find player by number
+      #drill down
+    else
           p "I don't recognize that player's number!"
           get_player_info?
-        end
-      end
     end
   end
+
 
   def quit
     abort("See you soon!")

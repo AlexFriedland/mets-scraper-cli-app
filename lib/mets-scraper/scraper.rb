@@ -46,6 +46,7 @@ class MetsScraper::Scraper
           height = player.css("td.dg-height").text
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
+          url = 'http://m.mets.mlb.com' + player.css("td.dg-name_display_first_last a").to_s.match(/(?<=")(?:\\.|[^"\\])*(?=")/).to_s
           MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
 
         }
@@ -66,6 +67,7 @@ class MetsScraper::Scraper
           height = player.css("td.dg-height").text
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
+          url = 'http://m.mets.mlb.com' + player.css("td.dg-name_display_first_last a").to_s.match(/(?<=")(?:\\.|[^"\\])*(?=")/).to_s
           MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
 
         }
@@ -86,6 +88,7 @@ class MetsScraper::Scraper
           height = player.css("td.dg-height").text
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
+          url = 'http://m.mets.mlb.com' + player.css("td.dg-name_display_first_last a").to_s.match(/(?<=")(?:\\.|[^"\\])*(?=")/).to_s
           MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
 
         }
@@ -102,6 +105,8 @@ class MetsScraper::Scraper
   end
 
   def self.player_info(url)
+    doc = Nokogiri::HTML(open(url))
+
   end
 
 end
