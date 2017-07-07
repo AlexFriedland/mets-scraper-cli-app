@@ -23,7 +23,8 @@ class MetsScraper::Scraper
           height = player.css("td.dg-height").text
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
-          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+          url = 'http://m.mets.mlb.com' + player.css("td.dg-name_display_first_last a").to_s.match(/(?<=")(?:\\.|[^"\\])*(?=")/).to_s
+          MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
         }
       end
     }
@@ -45,7 +46,7 @@ class MetsScraper::Scraper
           height = player.css("td.dg-height").text
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
-          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+          MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
 
         }
       end
@@ -65,7 +66,7 @@ class MetsScraper::Scraper
           height = player.css("td.dg-height").text
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
-          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+          MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
 
         }
       end
@@ -85,7 +86,7 @@ class MetsScraper::Scraper
           height = player.css("td.dg-height").text
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
-          MetsScraper::Player.new(name, number, bt, height, weight, dob)
+          MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
 
         }
       end
@@ -98,6 +99,9 @@ class MetsScraper::Scraper
     catchers
     infield
     outfield
+  end
+
+  def self.player_info(url)
   end
 
 end

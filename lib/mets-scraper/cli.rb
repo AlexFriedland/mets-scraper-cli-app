@@ -9,7 +9,7 @@ class MetsScraper::CLI
     menu
   end
 
-  def player_roster
+  def player_info
   end
 
   def menu
@@ -43,7 +43,10 @@ class MetsScraper::CLI
         Batting / Throwing: #{player.bt}
         Height: #{player.height}
         Weight: #{player.weight}
-        Birthday: #{player.dob}"
+        Birthday: #{player.dob}
+        URL: #{player.url}
+        "
+
       }
 
 
@@ -124,6 +127,12 @@ class MetsScraper::CLI
       menu
     end
   end
+
+
+
+
+
+
 
   def list_pitchers
     MetsScraper::Scraper.get_players
