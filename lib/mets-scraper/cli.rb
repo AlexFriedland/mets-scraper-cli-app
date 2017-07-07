@@ -44,7 +44,6 @@ class MetsScraper::CLI
         Height: #{player.height}
         Weight: #{player.weight}
         Birthday: #{player.dob}
-        URL: #{player.url}
         "
 
       }
@@ -121,50 +120,15 @@ class MetsScraper::CLI
 
 
     elsif input == "exit"
-      abort("See you soon!")
+      quit
     else
       puts "Sorry, I don't recognize that input."
       menu
     end
   end
 
-
-
-
-
-
-
-  def list_pitchers
-    MetsScraper::Scraper.get_players
-    binding.pry
-    puts "
-    PITCHERS:
-    "
-
-    puts "To see more information for a player, enter their number:"
-
-    number = gets.strip
-  end
-
-  def list_catchers
-
-    puts "To see more information for a player, enter their number:"
-
-    number = gets.strip
-  end
-
-  def list_outfield
-
-    puts "To see more information for a player, enter their number:"
-
-    number = gets.strip
-  end
-
-  def list_infield
-
-    puts "To see more information for a player, enter their number:"
-
-    number = gets.strip
+  def quit
+    abort("See you soon!")
   end
 
 
