@@ -95,6 +95,7 @@ class MetsScraper::CLI
       MetsScraper::Player.all.each {|number|
         if number == input.to_i
           MetsScraper::Scraper.player_info(MetsScraper::Player.url)
+          binding.pry
           p "display secondary info"
         end
       }
