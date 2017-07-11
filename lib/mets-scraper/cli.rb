@@ -92,13 +92,19 @@ class MetsScraper::CLI
     elsif input == "back"
       menu
     elsif arr.include?(input.to_i)
-      MetsScraper::Player.all.each {|number|
+      MetsScraper::Player.all.each {|player|
+        if player.number.to_i == input.to_i
+          MetsScraper::Scraper.player_info(player.url)
+        end
+      }
+
+=begin
         if number == input.to_i
           MetsScraper::Scraper.player_info(MetsScraper::Player.url)
           binding.pry
           p "display secondary info"
         end
-      }
+=end
     else
           p "I don't recognize that player's number!"
           get_player_info?
