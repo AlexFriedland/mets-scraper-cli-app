@@ -95,16 +95,9 @@ class MetsScraper::CLI
       MetsScraper::Player.all.each {|player|
         if player.number.to_i == input.to_i
           MetsScraper::Scraper.player_info(player.url)
+          #scrape and 
         end
       }
-
-=begin
-        if number == input.to_i
-          MetsScraper::Scraper.player_info(MetsScraper::Player.url)
-          binding.pry
-          p "display secondary info"
-        end
-=end
     else
           p "I don't recognize that player's number!"
           get_player_info?
