@@ -105,10 +105,4 @@ class MetsScraper::Scraper
     outfield
   end
 
-  def self.player_info(url)
-    doc = Nokogiri::HTML(open(url))
-    binding.pry
-
-  end
-
 end

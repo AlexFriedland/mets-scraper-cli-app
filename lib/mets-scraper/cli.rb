@@ -94,8 +94,9 @@ class MetsScraper::CLI
     elsif arr.include?(input.to_i)
       MetsScraper::Player.all.each {|player|
         if player.number.to_i == input.to_i
-          MetsScraper::Scraper.player_info(player.url)
-          #scrape and 
+          MetsScraper::Player.player_info(player.url)
+          puts "#{player.pro}"
+          #scrape and
         end
       }
     else
