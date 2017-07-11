@@ -10,6 +10,7 @@ class MetsScraper::CLI
   end
 
   def menu
+
     puts "Welcome to the player roster of the New York Metropolitans.
 
     Which position would you like to view?
@@ -32,19 +33,7 @@ class MetsScraper::CLI
       "
       MetsScraper::Scraper.pitchers
 
-      MetsScraper::Player.all.each {|player|
-        puts "
-
-        Name: #{player.name}
-        Number: #{player.number}
-        Batting / Throwing: #{player.bt}
-        Height: #{player.height}
-        Weight: #{player.weight}
-        Birthday: #{player.dob}"
-
-      }
-
-
+      list_players
 
 
     elsif input == "2"
@@ -54,16 +43,7 @@ class MetsScraper::CLI
 
       MetsScraper::Scraper.catchers
 
-      MetsScraper::Player.all.each {|player|
-        puts "
-
-        Name: #{player.name}
-        Number: #{player.number}
-        Batting / Throwing: #{player.bt}
-        Height: #{player.height}
-        Weight: #{player.weight}
-        Birthday: #{player.dob}"
-      }
+      list_players
 
     elsif input == "3"
       puts "INFIELD OF THE NEW YORK METROPOLITANS:
@@ -71,16 +51,7 @@ class MetsScraper::CLI
       "
       MetsScraper::Scraper.infield
 
-      MetsScraper::Player.all.each {|player|
-        puts "
-
-        Name: #{player.name}
-        Number: #{player.number}
-        Batting / Throwing: #{player.bt}
-        Height: #{player.height}
-        Weight: #{player.weight}
-        Birthday: #{player.dob}"
-      }
+      list_players
 
     elsif input == "4"
       puts "OUTFIELD OF THE NEW YORK METROPOLITANS:
@@ -88,16 +59,7 @@ class MetsScraper::CLI
       "
       MetsScraper::Scraper.outfield
 
-      MetsScraper::Player.all.each {|player|
-        puts "
-
-        Name: #{player.name}
-        Number: #{player.number}
-        Batting / Throwing: #{player.bt}
-        Height: #{player.height}
-        Weight: #{player.weight}
-        Birthday: #{player.dob}"
-      }
+      list_players
 
     elsif input == "5"
       puts "FULL ROSTER OF THE NEW YORK METROPOLITANS
@@ -105,16 +67,7 @@ class MetsScraper::CLI
       "
       MetsScraper::Scraper.full_roster
 
-      MetsScraper::Player.all.each {|player|
-        puts "
-
-        Name: #{player.name}
-        Number: #{player.number}
-        Batting / Throwing: #{player.bt}
-        Height: #{player.height}
-        Weight: #{player.weight}
-        Birthday: #{player.dob}"
-      }
+      list_players
 
 
     elsif input == "exit"
@@ -123,10 +76,12 @@ class MetsScraper::CLI
       puts "Sorry, I don't recognize that input."
       menu
     end
+
+    get_player_info?
   end
 
   def get_player_info?
-    p "If you want to see more info on a player, enter their number and press ENTER.  Otherwise, if you want to go back, type back.  Or, just type quit."
+    p "If you want to see more info on a player, enter their number and press ENTER.  Otherwise, if you want to go back, type 'back'.  Or, just type 'quit'"
 
     input = gets.chomp
 
@@ -146,6 +101,20 @@ class MetsScraper::CLI
 
   def quit
     abort("See you soon!")
+  end
+
+  def list_players
+    MetsScraper::Player.all.each {|player|
+      puts "
+
+      Name: #{player.name}
+      Number: #{player.number}
+      Batting / Throwing: #{player.bt}
+      Height: #{player.height}
+      Weight: #{player.weight}
+      Birthday: #{player.dob}"
+
+    }
   end
 
 

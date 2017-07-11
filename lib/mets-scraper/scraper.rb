@@ -24,6 +24,8 @@ class MetsScraper::Scraper
           weight = player.css("td.dg-weight").text
           dob = player.css("td.dg-date_of_birth").text
           url = 'http://m.mets.mlb.com' + player.css("td.dg-name_display_first_last a").to_s.match(/(?<=")(?:\\.|[^"\\])*(?=")/).to_s
+
+
           MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
         }
       end
@@ -48,7 +50,6 @@ class MetsScraper::Scraper
           dob = player.css("td.dg-date_of_birth").text
           url = 'http://m.mets.mlb.com' + player.css("td.dg-name_display_first_last a").to_s.match(/(?<=")(?:\\.|[^"\\])*(?=")/).to_s
           MetsScraper::Player.new(name, number, bt, height, weight, dob, url)
-
         }
       end
     }
