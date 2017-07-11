@@ -93,7 +93,8 @@ class MetsScraper::CLI
         menu
     elsif input == arr.any?
       MetsScraper::Player.all.each {|number|
-        if number == arr
+        if number.to_i == input
+          MetsScraper::Scraper.player_info(MetsScraper::Player.url)
           p "display secondary info"
         end
       }
