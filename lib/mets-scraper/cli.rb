@@ -84,16 +84,16 @@ class MetsScraper::CLI
   def get_player_info?
     p "If you want to see more info on a player, enter their number and press ENTER.  Otherwise, if you want to go back, type 'back'.  Or, just type 'quit'"
 
-    input = gets.chomp
+    input = gets.strip
     arr = (0..100).to_a
 
     if input == "quit"
       quit
     elsif input == "back"
-        menu
-    elsif input == arr.any?
+      menu
+    elsif arr.include?(input.to_i)
       MetsScraper::Player.all.each {|number|
-        if number.to_i == input
+        if number == input.to_i
           MetsScraper::Scraper.player_info(MetsScraper::Player.url)
           p "display secondary info"
         end
