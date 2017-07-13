@@ -119,7 +119,8 @@ class MetsScraper::CLI
       Batting / Throwing: #{player.bt}
       Height: #{player.height}
       Weight: #{player.weight}
-      Birthday: #{player.dob}"
+      Birthday: #{player.dob}
+      "
     }
   end
 

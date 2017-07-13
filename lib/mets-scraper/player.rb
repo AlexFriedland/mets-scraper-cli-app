@@ -27,12 +27,19 @@ class MetsScraper::Player
   end
 
 
+
   def self.player_info(url)
 
     doc = Nokogiri::HTML(open(url))
 
-    pro = doc.search("div.container section#quick-stats div.player bio ul li span.label").text
+    pro = doc.search("div.player-bio ul li")
 
+    pro.each {|item|
+      puts item.text unless item.text.include?("Follow")
+    }
+
+    stats_header = doc.search("div.player-stats-summary-large table thead tr")
+    binding.pry
     #scrape and add the new values to attributes
   end
 end
