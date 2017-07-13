@@ -95,7 +95,7 @@ class MetsScraper::CLI
       MetsScraper::Player.all.each {|player|
         if player.number.to_i == input.to_i
           MetsScraper::Player.player_info(player.url)
-          puts "#{player.pro}"
+          get_player_info?
         end
       }
     else

@@ -38,6 +38,8 @@ class MetsScraper::Player
       puts item.text unless item.text.include?("Follow")
     }
 
+    puts "To see more info on this player, please visit #{url}"
+
     #stats_header = doc.search("div.player-stats-summary-large table thead tr")
     #stats_header.each {|x| puts "   #{x.text}   "}
     #binding.pry
