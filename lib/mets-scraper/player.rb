@@ -38,8 +38,12 @@ class MetsScraper::Player
       puts item.text unless item.text.include?("Follow")
     }
 
-    stats_header = doc.search("div.player-stats-summary-large table thead tr")
-    binding.pry
+    #stats_header = doc.search("div.player-stats-summary-large table thead tr")
+    #stats_header.each {|x| puts "   #{x.text}   "}
+    #binding.pry
+
+    #stats = doc.search("div.player-stats-summary-large table tbody tr").text
+    #stats.each {|tr| puts "   #{tr}   ".chomp}
     #scrape and add the new values to attributes
   end
 end

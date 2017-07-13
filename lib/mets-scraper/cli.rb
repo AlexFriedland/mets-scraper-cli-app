@@ -96,7 +96,6 @@ class MetsScraper::CLI
         if player.number.to_i == input.to_i
           MetsScraper::Player.player_info(player.url)
           puts "#{player.pro}"
-          #scrape and
         end
       }
     else
